@@ -15,9 +15,11 @@ import {
 } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Navigation } from './Navigation'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navigetion() {
   const [open, setOpen] = useState(false)
+  const navigate=useNavigate();
 
   return (
     <div className="bg-white">
