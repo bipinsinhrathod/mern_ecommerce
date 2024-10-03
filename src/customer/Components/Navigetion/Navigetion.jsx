@@ -1,4 +1,4 @@
-// import { Fragment, useState } from 'react' 
+// import { Fragment, useState } from 'react'
 // import {Dialog,DialogBackdrop,DialogPanel,Popover,PopoverButton,PopoverGroup,PopoverPanel,Tab,
 //   TabGroup,
 //   TabList,
@@ -43,8 +43,6 @@
 //     // navigate (`/${category.id}/${section.id}/${item.id}`);
 //     close();
 //   };
-
-
 
 //   return (
 //     <div className="bg-white">
@@ -286,7 +284,7 @@
 
 //                   {true ? (
 //                     <div>
-//                       <Avatar 
+//                       <Avatar
 //                       className='text-white'
 //                       onClick={handleUserClick}
 //                       aria-controls={open ? "basic-menu" : undefined}
@@ -300,7 +298,7 @@
 //                         R
 //                       </Avatar>
 
-//                        <Menu 
+//                        <Menu
 //                        id='basic-menu'
 //                        anchorEl={anchorEl}
 //                        open={openUserMenu}
@@ -318,10 +316,10 @@
 //                        </MenuItem>
 
 //                        <MenuItem>LogOut</MenuItem>
-//                        </Menu> 
+//                        </Menu>
 //                     </div>
 //                   ) :(
-//                     <Button 
+//                     <Button
 //                     onClick={handleOpen}
 //                     className='text-sm font-medium text-gray-700 hover:text-gray-800'
 //                     >
@@ -360,9 +358,9 @@
 
 //                 {/* Cart */}
 //                 <div className="ml-4 flow-root lg:ml-6">
-//                     <Button 
+//                     <Button
 //                     className="group -m-2 flex items-center p-2  "
-                    
+
 //                     >
 //                     <ShoppingBagIcon className='h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500' aria-hidden="true" />
 
@@ -390,53 +388,42 @@
 //   )
 // }
 
+// Bipinsinh
 
+// last
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Bipinsinh 
-
-// last 
-
-
-
-
-
-
-
-
-
-import { Fragment, useState } from 'react' 
-import { Dialog, DialogBackdrop, DialogPanel, Popover, PopoverButton, PopoverGroup, PopoverPanel, Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Navigation } from './Navigation'
-import { useNavigate } from 'react-router-dom'
-import { Avatar, Button, Menu, MenuItem } from "@mui/material"
-import { deepPurple } from '@mui/material/colors'
+import { Fragment, useState } from "react";
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  Popover,
+  PopoverButton,
+  PopoverGroup,
+  PopoverPanel,
+  Tab,
+  TabGroup,
+  TabList,
+  TabPanel,
+  TabPanels,
+} from "@headlessui/react";
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  ShoppingBagIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
+import { Navigation } from "./Navigation";
+import { useNavigate } from "react-router-dom";
+import { Avatar, Button, Menu, MenuItem } from "@mui/material";
+import { deepPurple } from "@mui/material/colors";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navigetion() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const [openAuthModal, setOpenAuthModal] = useState(false);
@@ -511,17 +498,30 @@ export default function Navigetion() {
               </div>
               <TabPanels as={Fragment}>
                 {Navigation.categories.map((category) => (
-                  <TabPanel key={category.name} className="space-y-10 px-4 pb-8 pt-10">
+                  <TabPanel
+                    key={category.name}
+                    className="space-y-10 px-4 pb-8 pt-10"
+                  >
                     <div className="grid grid-cols-2 gap-x-4">
                       {category.featured.map((item) => (
                         <div key={item.name} className="group relative text-sm">
                           <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                            <img alt={item.imageAlt} src={item.imageSrc} className="object-cover object-center" />
+                            <img
+                              alt={item.imageAlt}
+                              src={item.imageSrc}
+                              className="object-cover object-center"
+                            />
                           </div>
-                          <a href={item.href} className="mt-6 block font-medium text-gray-900">
-                            <span aria-hidden="true" className="absolute inset-0 z-10" />
-                            
-                              {item.name}
+                          <a
+                            href={item.href}
+                            className="mt-6 block font-medium text-gray-900"
+                          >
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-0 z-10"
+                            />
+
+                            {item.name}
                           </a>
                           <p aria-hidden="true" className="mt-1">
                             Shop now
@@ -531,7 +531,10 @@ export default function Navigetion() {
                     </div>
                     {category.sections.map((section) => (
                       <div key={section.name}>
-                        <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
+                        <p
+                          id={`${category.id}-${section.id}-heading-mobile`}
+                          className="font-medium text-gray-900"
+                        >
                           {section.name}
                         </p>
                         <ul
@@ -541,7 +544,12 @@ export default function Navigetion() {
                         >
                           {section.items.map((item) => (
                             <li key={item.name} className="flow-root">
-                              <p onClick={() => handleCategoryClick(category, section, item)} className="cursor-pointer hover:text-gray-800">
+                              <p
+                                onClick={() =>
+                                  handleCategoryClick(category, section, item)
+                                }
+                                className="cursor-pointer hover:text-gray-800"
+                              >
                                 {item.name}
                               </p>
                             </li>
@@ -562,7 +570,10 @@ export default function Navigetion() {
           Get free delivery on orders over $100
         </p>
 
-        <nav aria-label="Top" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav
+          aria-label="Top"
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        >
           <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
               <button
@@ -601,13 +612,19 @@ export default function Navigetion() {
                         transition
                         className="absolute inset-x-0 top-full text-sm text-gray-500 transition data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in z-10"
                       >
-                        <div aria-hidden="true" className="absolute inset-0 top-1/2 bg-white shadow" />
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-0 top-1/2 bg-white shadow"
+                        />
                         <div className="relative bg-white">
                           <div className="mx-auto max-w-7xl px-8">
                             <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                               <div className="col-start-2 grid grid-cols-2 gap-x-8">
                                 {category.featured.map((item) => (
-                                  <div key={item.name} className="group relative text-base sm:text-sm">
+                                  <div
+                                    key={item.name}
+                                    className="group relative text-base sm:text-sm"
+                                  >
                                     <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
                                       <img
                                         alt={item.imageAlt}
@@ -615,8 +632,14 @@ export default function Navigetion() {
                                         className="object-cover object-center"
                                       />
                                     </div>
-                                    <a href={item.href} className="mt-6 block font-medium text-gray-900">
-                                      <span aria-hidden="true" className="absolute inset-0 z-10" />
+                                    <a
+                                      href={item.href}
+                                      className="mt-6 block font-medium text-gray-900"
+                                    >
+                                      <span
+                                        aria-hidden="true"
+                                        className="absolute inset-0 z-10"
+                                      />
                                       {item.name}
                                     </a>
                                     <p aria-hidden="true" className="mt-1">
@@ -628,7 +651,10 @@ export default function Navigetion() {
                               <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
                                 {category.sections.map((section) => (
                                   <div key={section.name}>
-                                    <p id={`${section.name}-heading`} className="font-medium text-gray-900">
+                                    <p
+                                      id={`${section.name}-heading`}
+                                      className="font-medium text-gray-900"
+                                    >
                                       {section.name}
                                     </p>
                                     <ul
@@ -638,7 +664,10 @@ export default function Navigetion() {
                                     >
                                       {section.items.map((item) => (
                                         <li key={item.name} className="flex">
-                                          <a href={item.href} className="hover:text-gray-800">
+                                          <a
+                                            href={item.href}
+                                            className="hover:text-gray-800"
+                                          >
                                             {item.name}
                                           </a>
                                         </li>
@@ -694,8 +723,12 @@ export default function Navigetion() {
                           "aria-labelledby": "basic-button",
                         }}
                       >
-                        <MenuItem onClick={handleCloseUserMenu}>Profile</MenuItem>
-                        <MenuItem onClick={handleCloseUserMenu}>My Orders</MenuItem>
+                        <MenuItem onClick={handleCloseUserMenu}>
+                          Profile
+                        </MenuItem>
+                        <MenuItem onClick={()=>navigate("/account/order")}>
+                          My Orders
+                        </MenuItem>
                         <MenuItem onClick={handleLogout}>LogOut</MenuItem>
                       </Menu>
                     </div>
@@ -713,7 +746,10 @@ export default function Navigetion() {
                 <div className="flex lg:ml-6">
                   <p className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon aria-hidden="true" className="h-6 w-6" />
+                    <MagnifyingGlassIcon
+                      aria-hidden="true"
+                      className="h-6 w-6"
+                    />
                   </p>
                 </div>
 
@@ -724,7 +760,9 @@ export default function Navigetion() {
                       className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">2</span>
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                      2
+                    </span>
                     <span className="sr-only">Items in cart, view bag</span>
                   </Button>
                 </div>
